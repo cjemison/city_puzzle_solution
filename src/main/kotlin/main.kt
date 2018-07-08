@@ -1,16 +1,18 @@
-fun counts(word: String): MutableMap<Char, Int> {
-    return word.toLowerCase().toCharArray().fold(mutableMapOf()) { acc, c ->
-        if (acc.contains(c)) {
-            acc[c] = acc[c]!! + 1
-        } else {
-            acc[c] = 1
-        }
-        acc
-    }
-}
-
 fun main(args: Array<String>) {
     val list = listOf("Tokyo", "London", "Rome", "Donlon", "Kyoto", "Paris")
+
+
+    val counts: (String) -> MutableMap<Char, Int> = {
+        it.toLowerCase().toCharArray().fold(mutableMapOf()) { acc, c ->
+            if (acc.contains(c)) {
+                acc[c] = acc[c]!! + 1
+            } else {
+                acc[c] = 1
+            }
+            acc
+        }
+
+    }
     // so we don't repeat words in the list.
     val set: MutableSet<String> = mutableSetOf()
     println(list.foldIndexed(mutableSetOf<MutableList<String>>()) { index, acc, word ->
