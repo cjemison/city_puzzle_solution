@@ -9,7 +9,6 @@ fun main(args: Array<String>) {
             }
             acc
         }
-
     }
     // so we don't repeat words in the list.
     val set: MutableSet<String> = mutableSetOf()
