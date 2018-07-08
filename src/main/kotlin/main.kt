@@ -22,11 +22,7 @@ fun main(args: Array<String>) {
                 }
                 acc1
             }
-            if (l.isEmpty()) {
-                acc.add(mutableListOf(word))
-            } else {
-                acc.add(l)
-            }
+            if (list.isEmpty()) acc.add(mutableListOf(word)) else acc.add(l)
         }
         acc
     })
