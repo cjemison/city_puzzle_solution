@@ -1,7 +1,5 @@
 fun main(args: Array<String>) {
     val list = listOf("Tokyo", "London", "Rome", "Donlon", "Kyoto", "Paris")
-
-
     val counts: (String) -> MutableMap<Char, Int> = {
         it.toLowerCase().toCharArray().fold(mutableMapOf()) { acc, c ->
             if (acc.contains(c)) {
